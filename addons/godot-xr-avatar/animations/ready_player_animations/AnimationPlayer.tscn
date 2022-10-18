@@ -17,6 +17,7 @@
 [ext_resource path="res://addons/godot-xr-avatar/animations/ready_player_animations/idle.tres" type="Animation" id=15]
 [ext_resource path="res://addons/godot-xr-avatar/animations/ready_player_animations/pose_fiist_w_thumb.tres" type="Animation" id=16]
 
+
 [node name="AnimationPlayer" type="AnimationPlayer"]
 anims/T-pose = ExtResource( 1 )
 anims/backwards = ExtResource( 13 )

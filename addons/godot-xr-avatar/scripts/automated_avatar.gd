@@ -207,7 +207,7 @@ func _ready():
 		SkeletonIKL.set_magnet_position(Vector3(3,-5,-10))
 	else:
 		SkeletonIKL.set_magnet_position(Vector3(-3, -5, -10))
-	
+	SkeletonIKL.min_distance = .001
 	
 	#create SkeletonIK node called SkeletonIKR and set it to use the upper arm and hand bones with a magnet for IK
 	SkeletonIKR = SkeletonIK.new()
@@ -220,7 +220,7 @@ func _ready():
 		SkeletonIKR.set_magnet_position(Vector3(-3,-5,-10))
 	else:
 		SkeletonIKR.set_magnet_position(Vector3(3, -5, -10))
-	
+	SkeletonIKR.min_distance = .001
 	
 	#create SkeletonIK node called SkeletonIKLegL and set it to use the upper leg and foot with a magnet for IK
 	SkeletonIKLegL = SkeletonIK.new()
@@ -233,7 +233,7 @@ func _ready():
 		SkeletonIKLegL.set_magnet_position(Vector3(.2,0,1))
 	else:
 		SkeletonIKLegL.set_magnet_position(Vector3(-.2,0,1))
-	
+	SkeletonIKLegL.min_distance = .001
 	
 	#create SkeletonIK node called SkeletonIKLegR and set it to use the upper leg and foot with a magnet for IK
 	SkeletonIKLegR = SkeletonIK.new()
@@ -246,6 +246,7 @@ func _ready():
 		SkeletonIKLegR.set_magnet_position(Vector3(-.2,0,1))
 	else:
 		SkeletonIKLegR.set_magnet_position(Vector3(.2,0,1))
+	SkeletonIKLegR.min_distance = .001
 	
 	#set avatar height to player
 	if substitute_head_bone == false:
@@ -271,8 +272,6 @@ func _ready():
 	left_hand_target.name = "left_target"
 	left_hand.add_child(left_hand_target, true)
 	left_hand_target.rotation_degrees = left_hand_rotation_degs
-	#left_hand_target.rotation_degrees.y = 90
-	#left_hand_target.rotation_degrees.z = -90
 	
 	#VRM values
 	#left_hand_target.rotation_degrees.y = -90
@@ -282,8 +281,6 @@ func _ready():
 	right_hand_target.name = "right_target"
 	right_hand.add_child(right_hand_target, true)
 	right_hand_target.rotation_degrees = right_hand_rotation_degs
-	#right_hand_target.rotation_degrees.y = -90
-	#right_hand_target.rotation_degrees.z = 90
 	
 	#VRM values
 	#right_hand_target.rotation_degrees.y = 90
@@ -409,7 +406,8 @@ func _ready():
 		animationtree.name = "AnimationTree"
 		add_child(animationtree, true)
 		animationtree.active = true	
-		
+	
+	# Set variables for procedural walk		
 	default_step_distance = step_distance
 	default_step_height = step_anim_height
 	strafe_step_distance = step_distance*strafe_step_modifier
@@ -616,8 +614,7 @@ func _physics_process(delta: float) -> void:
 	# Rotate the head Y bone (look up/down)
 	var head := skeleton.get_bone_pose(head_bone)
 	var angles := arvrcamera.rotation
-	angles.x *= -1;angles.z *= -1
-	#angles.y -= lerp_angle(angles.y,arvrcamera.rotation.y,delta)
+	angles.x *= -1; angles.z *= -1
 	head.basis = Basis(angles)
 	skeleton.set_bone_pose(head_bone,head)
 

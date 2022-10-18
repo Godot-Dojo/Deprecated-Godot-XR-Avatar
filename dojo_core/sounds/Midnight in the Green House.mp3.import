@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Midnight in the Green House.mp3-bb6a1d8f057b69a46d1585d166f6e72c.mp3str"
+
+[deps]
+
+source_file="res://dojo_core/sounds/Midnight in the Green House.mp3"
+dest_files=[ "res://.import/Midnight in the Green House.mp3-bb6a1d8f057b69a46d1585d166f6e72c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

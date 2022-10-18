@@ -4,6 +4,7 @@
 [ext_resource path="res://addons/godot-xr-avatar/textures/avatar_sybot_AlbedoTransparency.png" type="Texture" id=2]
 [ext_resource path="res://addons/godot-xr-avatar/textures/avatar_sybot_Normal.png" type="Texture" id=3]
 
+
 [resource]
 albedo_texture = ExtResource( 2 )
 metallic_texture = ExtResource( 1 )

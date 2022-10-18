@@ -2,5 +2,6 @@
 
 [ext_resource path="res://addons/godot-xr-avatar/textures/tongue01_diffuse.png" type="Texture" id=1]
 
+
 [resource]
 albedo_texture = ExtResource( 1 )

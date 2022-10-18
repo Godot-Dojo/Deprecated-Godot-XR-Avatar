@@ -17,6 +17,7 @@
 [ext_resource path="res://addons/godot-xr-avatar/animations/mixamo_animations/sit_bike.tres" type="Animation" id=15]
 [ext_resource path="res://addons/godot-xr-avatar/animations/mixamo_animations/pose_thumb.tres" type="Animation" id=16]
 
+
 [node name="AnimationPlayer" type="AnimationPlayer"]
 anims/T-pose = ExtResource( 9 )
 anims/backwards = ExtResource( 2 )

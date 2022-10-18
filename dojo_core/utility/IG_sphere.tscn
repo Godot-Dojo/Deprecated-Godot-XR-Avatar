@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://dojo_core/utility/IG_sphere.gd" type="Script" id=1]
+
+
+[node name="IG_sphere" type="ImmediateGeometry"]
+script = ExtResource( 1 )
