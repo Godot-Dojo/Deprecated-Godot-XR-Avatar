@@ -16,8 +16,7 @@ func _ready():
 	right_controller = ARVRHelpers.get_right_controller(arvrorigin)
 	left_controller.get_node("Function_Pickup").connect("has_picked_up", self, "left_haptic_pulse_on_pickup")
 	right_controller.get_node("Function_Pickup").connect("has_picked_up", self, "right_haptic_pulse_on_pickup")
-	left_controller.connect("button_pressed", self, "left_haptic_pulse_on_button")
-	right_controller.connect("button_pressed", self, "right_haptic_pulse_on_button")
+
 
 func left_haptic_pulse_on_pickup(_what):
 	left_controller.set_rumble(0.2)
