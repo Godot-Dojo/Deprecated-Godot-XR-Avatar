@@ -613,9 +613,12 @@ func _physics_process(delta: float) -> void:
    
 	# Rotate the head Y bone (look up/down)
 	var head := skeleton.get_bone_pose(head_bone)
-	var angles := arvrcamera.rotation
-	angles.x *= -1; angles.z *= -1
-	head.basis = Basis(angles)
+#	var angles := arvrcamera.rotation
+#	angles.x *= -1; angles.z *= -1
+#	head.basis = Basis(angles)
+	head.basis.x = Vector3(arvrcamera.global_transform.basis.x.x, -arvrcamera.global_transform.basis.x.y, arvrcamera.global_transform.basis.x.z)
+	head.basis.y = Vector3(-arvrcamera.global_transform.basis.y.x, arvrcamera.global_transform.basis.y.y, arvrcamera.global_transform.basis.y.z)
+	head.basis.z = Vector3(arvrcamera.global_transform.basis.z.x, -arvrcamera.global_transform.basis.z.y, arvrcamera.global_transform.basis.z.z)
 	skeleton.set_bone_pose(head_bone,head)
 
 
